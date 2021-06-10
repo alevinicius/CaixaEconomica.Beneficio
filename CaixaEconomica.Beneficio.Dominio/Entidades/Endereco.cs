@@ -25,5 +25,21 @@ namespace CaixaEconomica.Beneficio.Dominio.Entidades
         {
             return Id.GetHashCode();
         }
+
+        public void Validar()
+        {
+            if (string.IsNullOrEmpty(Rua))
+            {
+                NotificacaoDominio.AddErro("Rua deve ser informada");
+            }
+            if (Numero == 0)
+            {
+                NotificacaoDominio.AddErro("Número deve ser informado");
+            }
+            if (TipoEnderecoId == 0)
+            {
+                NotificacaoDominio.AddErro("Tipo de endereço deve ser informadao");
+            }
+        }
     }
 }

@@ -14,7 +14,12 @@ namespace CaixaEconomica.Beneficio.Testes.Dominio.Entidades.Pessoa
         public void Init()
         {
             pessoa = new Beneficio.Dominio.Entidades.Pessoa();
-            endereco = new Endereco();
+            endereco = new Endereco() { 
+                Id = 1,
+                Rua = "FS",
+                Numero = 10,
+                TipoEnderecoId = 1
+            };
             pessoa.AdicionarEndereco(endereco);
         }
 
